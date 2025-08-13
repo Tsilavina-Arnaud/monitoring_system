@@ -2,15 +2,16 @@ import React from "react";
 import Input from "../Form/Input";
 import SimpleBtn from "../Button/SimpleBtn";
 import Table from "../Table/Table";
+import { Outlet } from "react-router-dom";
 
 function ApplicationsView() {
   const tableTitle = ["PID", "name", "username", "CPU", "Actions"];
 
   const searchApps = (q) => {
     if (q) {
-      applications = []
+      applications = [];
     }
-  }
+  };
 
   let applications = [];
   for (let i = 0; i < 100; i++) {
@@ -45,8 +46,11 @@ function ApplicationsView() {
           <SimpleBtn label="Quit application" bg="bg-red-600" />
         </div>
       </div>
-      <div className="my-8">
-        <Table titles={tableTitle} data={applications} />
+      <div className="flex">
+        <div className="my-8">
+          <Table titles={tableTitle} data={applications} />
+        </div>
+        <Outlet />
       </div>
     </>
   );

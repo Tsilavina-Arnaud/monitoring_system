@@ -47,12 +47,6 @@ function ProcessView() {
       <div className="flex items-center justify-between">
         <h1 className="text-2xl">Processes</h1>
         <Input searchApps={searchApps} />
-        <div>
-          <SimpleBtn label="Show details" bg="bg-amber-400" />
-        </div>
-        <div>
-          <SimpleBtn label="Quit application" bg="bg-red-600" />
-        </div>
       </div>
       <div className="my-8">
         <Table titles={tableTitle} data={applications} />

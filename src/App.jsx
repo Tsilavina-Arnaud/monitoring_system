@@ -6,7 +6,7 @@ import ApplicationsView from "./components/views/ApplicationsView";
 import HistoryView from "./components/views/HistoryView";
 import ProcessView from "./components/views/ProcessView";
 import ApplicationsDetails from "./components/views/ApplicationsDetails";
-import { useEffect, useState } from "react";
+import useFetch from "./hooks/useFetch";
 
 const router = createBrowserRouter([
   {
@@ -63,12 +63,7 @@ function App() {
 }
 
 function Root() {
-  const [hostname, setHostname] = useState('');
-  useEffect(() => {
-    fetch("/api/hostname")
-      .then((res) => res.json())
-      .then((data) => setHostname(data));
-  }, [])
+  const {data} = useFetch('/api/hostname')
 
   return (
     <>
@@ -76,10 +71,12 @@ function Root() {
         <SideNav links={links} />
         <div className="w-4/5 relative left-1/5 container px-4 my-4">
           <div className="flex items-center justify-end">
-            <h1 className="text-2xl">{hostname.hostname}</h1>
+            <h1 className="text-2xl mx-8">{data.hostname}</h1>
           </div>
           <div className="mt-8">
-            <Outlet />
+            <div className="mx-8">
+              <Outlet />
+            </div>
           </div>
         </div>
       </div>

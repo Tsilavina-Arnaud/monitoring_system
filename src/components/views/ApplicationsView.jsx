@@ -47,10 +47,9 @@ function ApplicationsView() {
         </div>
       </div>
       <div className="flex">
-        <div className="my-8">
+        {/* <div className="my-8"> */}
           <Table titles={tableTitle} data={applications} />
-        </div>
-        <Outlet />
+        {/* </div> */}
       </div>
     </>
   );

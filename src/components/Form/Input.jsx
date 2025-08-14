@@ -10,7 +10,7 @@ export default function Input({searchApps}) {
 
   return (
     <div className="relative">
-      <input ref={q} onInput={handleInput}
+      <input ref={q} placeholder="search" onInput={handleInput}
         type="text"
         className="border-blue-400 border-2 py-1 focus:outline-none focus:border-blue-800 focus:shadow-md duration-300 ease-in-out rounded-md px-4 text-gray-600"
       />

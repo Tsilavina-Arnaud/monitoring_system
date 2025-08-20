@@ -1,4 +1,5 @@
 import "./App.css";
+import 'react-toastify/dist/ReactToastify.css';
 import SideNav from "./components/SideNav/SideNav";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import HomeView from "./components/views/HomeView";
@@ -24,12 +25,6 @@ const router = createBrowserRouter([
       {
         path: "applications",
         element: <ApplicationsView />,
-        children: [
-          {
-            path: "/applications/:id",
-            element: <ApplicationsDetails />,
-          },
-        ],
       },
       {
         path: "history",

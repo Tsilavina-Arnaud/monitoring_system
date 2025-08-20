@@ -4,6 +4,8 @@ import SimpleBtn from "../Button/SimpleBtn";
 import Table from "../Table/Table";
 import useFetch from "../../hooks/useFetch";
 import { Outlet } from "react-router-dom";
+import { IoIosLogOut } from "react-icons/io";
+import { IoEyeOutline } from "react-icons/io5";
 
 function ApplicationsView() {
   const tableTitle = ["PID", "title", "CPU", "Actions"];
@@ -41,8 +43,12 @@ function ApplicationsView() {
             <td className="py-4">{process.cpu_percent} %</td>
             <td>
               <div className="flex justify-center gap-4">
-                <button className="py-2 px-4 text-white bg-green-600">Detail</button>
-                <button className="py-2 px-4 text-white bg-red-600 opacity-70 hover:opacity-100">Quit</button>
+                <button className="py-2 px-4 text-xl cursor-pointer font-bold text-red-600">
+                  <IoIosLogOut />
+                </button>
+                <button className="py-2 px-4 text-xl cursor-pointer font-bold text-green-600">
+                  <IoEyeOutline />
+                </button>
               </div>
             </td>
           </tr>
@@ -52,8 +58,8 @@ function ApplicationsView() {
 
   return (
     <>
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl">History</h1>
+      <div className="flex items-center justify-between gap-7">
+        <h1 className="text-2xl">Applications</h1>
         <Input searchApps={searchApps} />
       </div>
       <div className="flex mt-8">

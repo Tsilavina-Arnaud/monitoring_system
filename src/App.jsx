@@ -7,6 +7,10 @@ import HistoryView from "./components/views/HistoryView";
 import ProcessView from "./components/views/ProcessView";
 import ApplicationsDetails from "./components/views/ApplicationsDetails";
 import useFetch from "./hooks/useFetch";
+import { MdDashboard } from "react-icons/md";
+import { FaChartLine } from "react-icons/fa6";
+import { IoMdSpeedometer } from "react-icons/io";
+import { VscServerProcess } from "react-icons/vsc";
 
 const router = createBrowserRouter([
   {
@@ -43,18 +47,22 @@ const links = [
   {
     name: "Aperçu",
     link: "/",
+    icon: <IoMdSpeedometer className="text-2xl" />
   },
   {
     name: "Applications",
     link: "/applications",
+    icon: <MdDashboard className="text-2xl" />
   },
   {
     name: "Historique",
     link: "/history",
+    icon: <FaChartLine className="text-2xl" />
   },
   {
     name: "Processus",
     link: "/process",
+    icon: <VscServerProcess className="text-2xl" />
   },
 ];
 
